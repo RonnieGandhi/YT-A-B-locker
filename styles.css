@@ -1,0 +1,48 @@
+/* YouTube Ad Blocker — Injected Styles
+ * Hides ad-related elements via CSS so they never flash on screen,
+ * even before the content script runs its first pass.
+ */
+
+/* Video-player ad overlays */
+.ytp-ad-module,
+.ytp-ad-overlay-container,
+.ytp-ad-overlay-slot,
+.ytp-ad-image-overlay,
+.ytp-ad-text-overlay,
+.ytp-ad-skip-button-container,
+.ytp-ad-player-overlay,
+.ytp-ad-player-overlay-instream-info,
+.ytp-ad-action-interstitial,
+.ytp-ad-preview-container,
+.ytp-ad-message-container,
+.ytp-ad-visit-advertiser-button,
+.ytp-ad-progress,
+.ytp-ad-progress-list {
+  display: none !important;
+}
+
+/* Page-level ad banners / promoted content */
+ytd-ad-slot-renderer,
+ytd-banner-promo-renderer,
+ytd-statement-banner-renderer,
+ytd-in-feed-ad-layout-renderer,
+ytd-promoted-sparkles-web-renderer,
+ytd-promoted-sparkles-text-search-renderer,
+ytd-display-ad-renderer,
+ytd-companion-slot-renderer,
+ytd-action-companion-ad-renderer,
+ytd-promoted-video-renderer,
+ytd-player-legacy-desktop-watch-ads-renderer,
+ytd-search-pyv-renderer,
+#masthead-ad,
+#player-ads,
+#panels > ytd-engagement-panel-section-list-renderer[target-id='engagement-panel-ads'] {
+  display: none !important;
+}
+
+/* Mobile web ads */
+ytm-promoted-sparkles-web-renderer,
+ytm-companion-ad-renderer {
+  display: none !important;
+}
+

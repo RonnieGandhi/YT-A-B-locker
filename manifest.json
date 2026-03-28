@@ -1,0 +1,49 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Ad Blocker — FreeHand",
+  "version": "1.0.0",
+  "description": "Removes video ads, overlay ads, banner ads, and sponsored content from YouTube.",
+  "permissions": [
+    "storage",
+    "declarativeNetRequest"
+  ],
+  "host_permissions": [
+    "*://*.youtube.com/*",
+    "*://*.googlevideo.com/*",
+    "*://*.doubleclick.net/*",
+    "*://*.youtube-nocookie.com/*"
+  ],
+  "icons": {
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/*"],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "youtube_ad_rules",
+        "enabled": true,
+        "path": "rules.json"
+      }
+    ]
+  }
+}
+
